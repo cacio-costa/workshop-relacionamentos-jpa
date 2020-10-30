@@ -3,6 +3,7 @@ package org.serratec.workshop.modelo;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,8 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table(name = "livro")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Livro {
 
 	@Id
@@ -21,7 +25,7 @@ public class Livro {
 	private String descricao;
 	private int numeroDePaginas;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Assunto assunto;
 	
 	@OneToMany(mappedBy = "livro")
@@ -67,4 +71,11 @@ public class Livro {
 	public void setEmprestimos(List<Emprestimo> emprestimos) {
 		this.emprestimos = emprestimos;
 	}
+
+	@Override
+	public String toString() {
+		return "Livro [id=" + id + ", descricao=" + descricao + ", assunto=" + assunto + "]";
+	}
+	
+	
 }

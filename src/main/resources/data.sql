@@ -12,7 +12,7 @@ insert into livro (descricao, numero_de_paginas, assunto_id) values ('Clean Code
 insert into livro (descricao, numero_de_paginas, assunto_id) values ('Clean Architecture', 680, 2);
 
 insert into livro (descricao, numero_de_paginas, assunto_id) values ('Building Microservices', 467, 1);
-insert into livro (descricao, numero_de_paginas, assunto_id) values ('monolith to microservices', 540, 1);
+insert into livro (descricao, numero_de_paginas, assunto_id) values ('Monolith to Microservices', 540, 1);
 
     
 insert into autor_livros (autor_id, livros_id) values (1, 1);

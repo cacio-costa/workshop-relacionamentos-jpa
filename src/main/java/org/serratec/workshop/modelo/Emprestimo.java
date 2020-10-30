@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "emprestimo")
 public class Emprestimo {
@@ -21,6 +23,7 @@ public class Emprestimo {
 	private LocalDate dataDeDevolucao;
 	
 	@ManyToOne
+	@JsonIgnore
 	private Livro livro;
 	
 
