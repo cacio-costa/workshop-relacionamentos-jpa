@@ -28,10 +28,10 @@ public class DesafioController {
 	}
 	
 	/*
-	 * Exibir somente livros que tenham 3 ou menos empréstimos
+	 * Exibir somente livros que foram pouco emprestados (até 2 vezes)
 	 */
-	@GetMapping("/livros-com-menos-de-quatro-emprestimos")
-	public String livrosComMenosDeQuatroEmprestimos() {
+	@GetMapping("/livros-pouco-emprestados")
+	public String livrosComMenosDeTresEmprestimos() {
 		return "VERIFIQUE A SAÍDA NO CONSOLE";
 	}
 		
